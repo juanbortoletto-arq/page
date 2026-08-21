@@ -168,7 +168,7 @@
 </head>
 <body>
 
-    <!-- Header / Menu Superior com link para a aba de Artigos -->
+    <!-- Header / Menu Superior -->
     <header>
         <a href="index.html" class="logo">Juan Bortoletto</a>
         <nav class="nav-links">
@@ -294,7 +294,7 @@
         </div>
     </section>
 
-    <!-- Coleta de Lead / Contato -->
+    <!-- Coleta de Lead / Contato (Integrado com Web3Forms para GitHub Pages) -->
     <section id="orcamento" class="contact-section">
         <div class="container contact-container">
             <div>
@@ -303,8 +303,11 @@
                 <p style="font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 1px;">📍 Ribeirão Pires e Grande ABC Paulista - SP</p>
             </div>
             <div style="background-color: var(--pure-white); padding: 40px; border: 1px solid var(--light-gray);">
-                <form name="contato-orcamento" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="contato-orcamento">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <!-- Cole a sua chave de acesso gerada no Web3Forms aqui embaixo -->
+                    <input type="hidden" name="access_key" value="SUA-CHAVE-AQUI">
+
                     <input type="text" name="nome" class="form-control" placeholder="Seu Nome Completo" required>
                     <input type="tel" name="whatsapp" class="form-control" placeholder="Seu WhatsApp (com DDD)" required>
                     <select name="tipo-projeto" class="form-control" required>
@@ -313,6 +316,7 @@
                         <option value="Interiores">Projeto de Interiores</option>
                         <option value="Obra">Gestão de Obra Completa</option>
                     </select>
+                    
                     <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Enviar Solicitação</button>
                 </form>
             </div>
