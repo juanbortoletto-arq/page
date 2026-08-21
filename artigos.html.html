@@ -3,36 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Artigos e insights sobre arquitetura, projetos residenciais e gestão de obras por Juan Bortoletto.">
-    <title>Artigos & Insights | Juan Bortoletto Arquitetura</title>
+    <meta name="description" content="Artigos sobre arquitetura residencial, identidade urbana em Ribeirão Pires e gestão de obras por Juan Bortoletto.">
+    <title>Artigos e Reflexões | Juan Bortoletto Arquitetura</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
         :root { --navy-blue: #1A2A3A; --off-white: #F7F6F2; --pure-white: #FFFFFF; --charcoal: #2D3134; --gold-accent: #C9B291; --light-gray: #E8E5DF; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Lato', sans-serif; color: var(--charcoal); background-color: var(--pure-white); line-height: 1.6; padding-top: 80px; }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
+        h1, h2, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
         header { position: fixed; top: 0; width: 100%; background-color: var(--pure-white); border-bottom: 1px solid var(--light-gray); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy-blue); text-decoration: none; font-weight: bold; }
         .nav-links a { margin-left: 30px; text-decoration: none; color: var(--charcoal); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
         .nav-links a:hover { color: var(--gold-accent); }
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease; }
-        .whatsapp-float:hover { transform: scale(1.1); }
-        .section-padding { padding: 80px 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .blog-header { background-color: var(--off-white); padding: 60px 20px; text-align: center; border-bottom: 1px solid var(--light-gray); }
-        .blog-header h1 { font-size: 3rem; color: var(--navy-blue); margin-bottom: 10px; }
-        .article-preview { background: var(--pure-white); border: 1px solid var(--light-gray); padding: 40px; margin-bottom: 30px; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .article-preview:hover { transform: translateY(-3px); border-color: var(--gold-accent); }
-        .article-date { color: var(--gold-accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; display: block; }
-        .article-preview h2 { color: var(--navy-blue); font-size: 1.8rem; margin-bottom: 15px; }
-        .article-preview h2 a { color: var(--navy-blue); text-decoration: none; transition: color 0.3s; }
-        .article-preview h2 a:hover { color: var(--gold-accent); }
-        .article-preview p { color: var(--charcoal); margin-bottom: 20px; text-align: justify; }
-        .read-more { display: inline-block; color: var(--navy-blue); text-decoration: none; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; font-weight: bold; border-bottom: 2px solid var(--gold-accent); padding-bottom: 2px; }
-        footer { background-color: var(--navy-blue); color: var(--pure-white); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
-        .social-links { margin-bottom: 20px; }
-        .social-links a { color: var(--gold-accent); text-decoration: none; margin: 0 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        @media (max-width: 900px) { .nav-links { display: none; } header { justify-content: center; } .blog-header h1 { font-size: 2.2rem; } }
+        .container { max-width: 1000px; margin: 80px auto; padding: 0 20px; }
+        .page-title { font-size: 3rem; color: var(--navy-blue); margin-bottom: 10px; text-align: center; }
+        .page-subtitle { text-align: center; color: #666; margin-bottom: 60px; font-size: 1.1rem; }
+        .articles-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        .article-card { background: var(--off-white); padding: 40px; border: 1px solid var(--light-gray); transition: transform 0.3s ease; }
+        .article-card:hover { transform: translateY(-3px); }
+        .article-category { color: var(--gold-accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; display: block; margin-bottom: 10px; }
+        .article-card h2 { font-size: 1.8rem; color: var(--navy-blue); margin-bottom: 15px; }
+        .article-card p { color: #555; margin-bottom: 20px; font-size: 1rem; text-align: justify; }
+        .read-more { color: var(--navy-blue); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; border-bottom: 1px solid var(--navy-blue); padding-bottom: 2px; }
+        .read-more:hover { color: var(--gold-accent); border-color: var(--gold-accent); }
+        footer { background-color: var(--navy-blue); color: var(--pure-white); padding: 40px 20px; text-align: center; margin-top: 100px; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer a { color: var(--gold-accent); text-decoration: none; margin: 0 15px; }
     </style>
 </head>
 <body>
@@ -42,43 +37,36 @@
             <a href="index.html#sobre">Sobre</a>
             <a href="index.html#portfolio">Portfólio</a>
             <a href="index.html#servicos">Especialidades</a>
-            <a href="artigos.html" style="color: var(--gold-accent); font-weight: bold;">Artigos</a>
+            <a href="artigos.html" style="color: var(--gold-accent);">Artigos</a>
             <a href="index.html#orcamento" style="color: var(--gold-accent); font-weight: bold;">Contato</a>
         </nav>
     </header>
-    <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Li%20os%20seus%20artigos%20e%20gostaria%20de%20conversar." class="whatsapp-float" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
-    <section class="blog-header">
-        <div class="container">
-            <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">Insights & Conteúdos</span>
-            <h1>Artigos e Guias de Arquitetura</h1>
-            <p>Orientações técnicas para planejar projetos residenciais e obras com segurança.</p>
+
+    <main class="container">
+        <h1 class="page-title serif">Artigos & Reflexões</h1>
+        <p class="page-subtitle">Pensamentos sobre arquitetura, urbanismo, identidade urbana e a prática projetual.</p>
+
+        <div class="articles-grid">
+            <!-- Novo Artigo 1 -->
+            article class="article-card">
+                <span class="article-category">Cidade e Território</span>
+                <h2 class="serif">O Papel da Arquitetura na Identidade de Ribeirão Pires</h2>
+                <p>Uma análise sobre como a vegetação preservada, o clima e a história de Ribeirão Pires contrastam com o crescimento urbano desordenado, e o papel da boa arquitetura na defesa do território.</p>
+                <a href="artigos/artigo1.html" class="read-more">Ler Artigo Completo →</a>
+            </article>
+
+            <!-- Novo Artigo 2 -->
+            <article class="article-card">
+                <span class="article-category">A Casa com Identidade</span>
+                <h2 class="serif">A Crise da Casa Genérica: Como Restaurar a Identidade dos Nossos Lares?</h2>
+                <p>Reflexão profunda sobre como a busca por validação estética nas redes sociais transforma lares em espaços frios e genéricos, e a importância de resgatar a alma e a história na arquitetura residencial.</p>
+                <a href="artigos/artigo2.html" class="read-more">Ler Artigo Completo →</a>
+            </article>
         </div>
-    </section>
-    <section class="section-padding">
-        <div class="container">
-            <div class="article-preview">
-                <span class="article-date">Gestão de Obras • 2026</span>
-                <h2><a href="artigos/quanto-custa-construir.html">Como evitar surpresas e estourar o orçamento na construção residencial</a></h2>
-                <p>Descubra como o Estudo de Viabilidade Financeira (EVF) e o planejamento técnico evitam surpresas desagradáveis e blindam o custo da sua obra no Grande ABC.</p>
-                <a href="artigos/quanto-custa-construir.html" class="read-more">Ler Artigo Completo →</a>
-            </div>
-            <div class="article-preview">
-                <span class="article-date">Projetos Residenciais • 2026</span>
-                <h2><a href="artigos/aprovacao-de-projetos.html">Como funciona a aprovação de projetos na prefeitura e condomínios</a></h2>
-                <p>Entenda o passo a passo para o licenciamento legal da sua construção sem enfrentar travas burocráticas ou embargos indesejados.</p>
-                <a href="artigos/aprovacao-de-projetos.html" class="read-more">Ler Artigo Completo →</a>
-            </div>
-            <div class="article-preview">
-                <span class="article-date">Arquitetura de Interiores • 2026</span>
-                <h2><a href="artigos/projeto-arquitetonico-vs-interiores.html">Qual a diferença entre projeto arquitetônico e projeto de interiores?</a></h2>
-                <p>Saiba distinguir as etapas da concepção volumétrica macro e a personalização detalhada dos espaços internos da sua residência.</p>
-                <a href="artigos/projeto-arquitetonico-vs-interiores.html" class="read-more">Ler Artigo Completo →</a>
-            </div>
-        </div>
-    </section>
+    </main>
+
     <footer>
-        <div class="social-links"><a href="http://www.instagram.com/juanbortoletto.arq" target="_blank">Instagram</a> • <a href="https://share.google/wQA0oCfrNzJxFjOJZ" target="_blank">Google</a></div>
-        <p style="font-size: 0.85rem; color: #A0B0C0;">© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
+        <p>© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
