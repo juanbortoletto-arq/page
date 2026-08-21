@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="k6X7kMGQkkTHEis26gO1rWkMXacp4wVM79rfyrvwUp8" />
+    <meta name="description" content="Escritório de arquitetura em Ribeirão Pires e Grande ABC. Projetos residenciais, interiores e gestão de obras com orçamento controlado.">
+    <title>Juan Bortoletto Arquitetura | Projetos Residenciais e Gestão de Obras</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+        :root {
+            --navy-blue: #1A2A3A;
+            --off-white: #F7F6F2;
+            --pure-white: #FFFFFF;
+            --charcoal: #2D3134;
+            --gold-accent: #C9B291;
+            --light-gray: #E8E5DF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--pure-white);
+            line-height: 1.6;
+            padding-top: 80px; 
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+        .text-justify { text-align: justify; }
+
+        /* Menu de Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--pure-white);
+            border-bottom: 1px solid var(--light-gray);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy-blue); text-decoration: none; font-weight: bold; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: var(--charcoal); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--gold-accent); }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            background-color: var(--navy-blue);
+            color: var(--pure-white);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid var(--navy-blue);
+            cursor: pointer;
+        }
+        .btn:hover { background-color: var(--pure-white); color: var(--navy-blue); }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        .section-padding { padding: 100px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .text-center { text-align: center; }
+
+        /* Hero */
+        .hero {
+            height: calc(100vh - 80px);
+            background: linear-gradient(rgba(26, 42, 58, 0.75), rgba(26, 42, 58, 0.75)), url('capa.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--pure-white);
+        }
+
+        .hero h1 { font-size: 4rem; margin: 20px 0; line-height: 1.1; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px auto; color: var(--off-white); }
+        
+        .hero-tag { 
+            color: var(--gold-accent); 
+            letter-spacing: 3px; 
+            text-transform: uppercase; 
+            font-size: 0.95rem; 
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            border: 1px solid rgba(201, 178, 145, 0.3);
+        }
+
+        .location-tag { margin-top: 20px; font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 1px; }
+
+        /* Sobre / História */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-image { width: 100%; max-width: 380px; height: auto; object-fit: cover; border: 1px solid var(--light-gray); padding: 10px; margin: 0 auto; display: block; }
+        
+        /* Portfólio */
+        .portfolio { background-color: var(--off-white); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin-top: 40px; }
+        .portfolio-item { width: 100%; height: 350px; object-fit: cover; transition: transform 0.3s ease; }
+        .portfolio-item:hover { transform: scale(1.02); }
+
+        /* Serviços */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .service-box { background: var(--pure-white); padding: 40px 30px; border-top: 4px solid var(--navy-blue); border: 1px solid var(--light-gray); }
+        .service-box h2 { color: var(--navy-blue); margin-bottom: 20px; border-bottom: 1px solid var(--light-gray); padding-bottom: 20px; font-size: 1.5rem; }
+        .service-list { list-style: none; margin-top: 10px; }
+        .service-list li { margin-bottom: 12px; padding-left: 24px; position: relative; font-size: 0.95rem; }
+        .service-list li::before { content: '✓'; color: var(--gold-accent); position: absolute; left: 0; font-weight: bold; }
+
+        /* Três Pilares / Diferenciais */
+        .differentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .diff-box { background-color: var(--navy-blue); color: var(--pure-white); padding: 50px 40px; text-align: left; }
+        .diff-box h3 { color: var(--gold-accent); font-size: 1.6rem; margin-bottom: 20px; line-height: 1.3; }
+        .diff-box p { font-size: 1.05rem; color: #D0D0D0; }
+        
+        /* Contato / Coleta de Lead */
+        .contact-section { background-color: var(--off-white); padding: 100px 20px; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .form-control { width: 100%; padding: 15px; border: 1px solid var(--light-gray); font-family: 'Lato', sans-serif; margin-bottom: 15px; background: var(--pure-white); }
+        
+        /* Rodapé Redes Sociais */
+        footer { background-color: var(--navy-blue); color: var(--pure-white); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: var(--gold-accent); text-decoration: none; margin: 0 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .social-links a:hover { color: var(--pure-white); }
+
+        @media (max-width: 900px) {
+            .about-grid, .services-grid, .differentials-grid, .contact-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            header { justify-content: center; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Menu Superior com link para a aba de Artigos -->
+    <header>
+        <a href="index.html" class="logo">Juan Bortoletto</a>
+        <nav class="nav-links">
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#portfolio">Portfólio</a>
+            <a href="index.html#servicos">Especialidades</a>
+            <a href="artigos.html" style="color: var(--gold-accent);">Artigos</a>
+            <a href="index.html#orcamento" style="color: var(--gold-accent); font-weight: bold;">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Acessei%20o%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container text-center">
+            <span class="hero-tag">Arquitetura & Interiores</span>
+            <h1>Projetos Residenciais e Gestão de Obras <br>Sem Surpresas no Orçamento.</h1>
+            <p>Concepção de projetos residenciais exclusivos e acompanhamento completo de execução de obras.</p>
+            <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Acessei%20o%20seu%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20personalizado." target="_blank" class="btn">Solicitar Orçamento Personalizado</a>
+            <p class="location-tag">📍 Atendimento em Ribeirão Pires e Grande ABC Paulista - SP</p>
+        </div>
+    </section>
+
+    <!-- Sobre / História -->
+    <section id="sobre" class="section-padding">
+        <div class="container about-grid">
+            <img src="perfil.jpg" alt="Arquiteto Juan Bortoletto especialista em projetos residenciais e gestão de obras no ABC" class="about-image">
+            <div>
+                <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">O Arquiteto</span>
+                <h2 class="serif" style="font-size: 2.5rem; color: var(--navy-blue); margin: 10px 0 20px 0;">Sua Visão, Minha Assinatura.</h2>
+                <p class="text-justify" style="margin-bottom: 20px;">Sou Arquiteto e Urbanista formado pela Universidade São Judas Tadeu, com atuação focada em projetos residenciais, arquitetura de interiores e gestão completa de obras em Ribeirão Pires e Grande ABC.</p>
+                <p class="text-justify" style="margin-bottom: 20px;">Entendo a arquitetura não como mero ornamento, mas como uma ferramenta de organização, viabilidade e transformação da vida cotidiana através de projetos residenciais planejados.</p>
+                <p class="text-justify" style="margin-bottom: 30px;">Meu trabalho é estruturado para alinhar rigor técnico, identidade espacial e controle financeiro na gestão de obras — garantindo que cada projeto seja executado com previsibilidade do início ao fim.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="section-padding portfolio">
+        <div class="container">
+            <div class="text-center">
+                <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.9rem; font-weight: 700;">Meus Trabalhos</span>
+                <h2 class="serif" style="font-size: 2.5rem; color: var(--navy-blue); margin-bottom: 10px; margin-top: 10px;">Portfólio de Projetos Residenciais</h2>
+                <p>Explore a excelência dos projetos arquitetônicos, interiores e gestão de obras.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <img src="projeto1.jpg" alt="Projeto residencial de alto padrão em Ribeirão Pires" class="portfolio-item">
+                <img src="projeto2.jpg" alt="Execução e projeto de interiores residencial" class="portfolio-item">
+                <img src="projeto3.jpg" alt="Arquitetura e projetos residenciais autorais" class="portfolio-item">
+                <img src="projeto4.png" alt="Detalhe de projeto arquitetônico residencial" class="portfolio-item">
+                <img src="projeto5.png" alt="Gestão de obra residencial e acabamentos" class="portfolio-item">
+                <img src="projeto6.jpg" alt="Fachada e volumetria de projeto residencial" class="portfolio-item">
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="serif" style="font-size: 2.5rem; color: var(--navy-blue);">Especialidades</h2>
+            </div>
+            
+            <div class="services-grid text-left">
+                <div class="service-box">
+                    <h2>Projeto Arquitetônico</h2>
+                    <ul class="service-list">
+                        <li>Estudo de viabilidade para projetos residenciais</li>
+                        <li>Concepção volumétrica e design de fachadas</li>
+                        <li>Aprovação legal em prefeitura e condomínio</li>
+                        <li>Detalhamento executivo para construção</li>
+                    </ul>
+                </div>
+
+                <div class="service-box">
+                    <h2>Projeto de Interiores</h2>
+                    <ul class="service-list">
+                        <li>Diagnóstico espacial e briefing personalizado</li>
+                        <li>Desenvolvimento de conceito estético residencial</li>
+                        <li>Estudo de fluxos e layout inteligente</li>
+                        <li>Apresentação em modelagem 3D detalhada</li>
+                        <li>Projeto executivo e especificação de materiais</li>
+                        <li>Caderno de detalhamentos técnicos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-box">
+                    <h2>Gestão de Obra</h2>
+                    <ul class="service-list">
+                        <li>Planejamento físico e controle financeiro (EVF)</li>
+                        <li>Coordenação de equipes e fornecedores</li>
+                        <li>Vistorias técnicas periódicas no canteiro</li>
+                        <li>Fiscalização rigorosa de cronograma e custos</li>
+                        <li>Inspeção detalhada para entrega da obra</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Três Pilares -->
+            <div class="differentials-grid">
+                <div class="diff-box">
+                    <h3 class="serif">Projetos Residenciais com Rigor Técnico</h3>
+                    <p class="text-justify">Especializado em unir excelência estética ao planejamento de alto nível em projetos residenciais. Cada decisão é conduzida de forma estratégica para valorizar seu investimento, eliminar erros e entregar um refúgio sofisticado e funcional.</p>
+                </div>
+
+                <div class="diff-box">
+                    <h3 class="serif">Gestão de Obras com Orçamento Blindado</h3>
+                    <p class="text-justify">Nenhuma obra deve ser um mistério. Através do Estudo de Viabilidade Financeira (EVF) na gestão de obras, garanto controle de custos e escopo técnico antes de iniciar a execução, evitando surpresas desagradáveis.</p>
+                </div>
+
+                <div class="diff-box">
+                    <h3 class="serif">Execução Prática e<br> Fim do Improviso</h3>
+                    <p class="text-justify">Sua obra conduzida com cronograma técnico e fiscalização rigorosa. Assumo a coordenação direta do canteiro para que a execução siga fielmente os projetos residenciais, garantindo total tranquilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coleta de Lead / Contato -->
+    <section id="orcamento" class="contact-section">
+        <div class="container contact-container">
+            <div>
+                <h2 class="serif" style="font-size: 2.5rem; color: var(--navy-blue); margin-bottom: 20px;">Pronto para tirar seu projeto residencial do papel?</h2>
+                <p class="text-justify" style="margin-bottom: 20px;">Preencha os dados ao lado para receber um contato direto sobre projetos residenciais e gestão de obras ou clique no botão flutuante do WhatsApp.</p>
+                <p style="font-size: 0.95rem; color: var(--gold-accent); letter-spacing: 1px;">📍 Ribeirão Pires e Grande ABC Paulista - SP</p>
+            </div>
+            <div style="background-color: var(--pure-white); padding: 40px; border: 1px solid var(--light-gray);">
+                <form name="contato-orcamento" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contato-orcamento">
+                    <input type="text" name="nome" class="form-control" placeholder="Seu Nome Completo" required>
+                    <input type="tel" name="whatsapp" class="form-control" placeholder="Seu WhatsApp (com DDD)" required>
+                    <select name="tipo-projeto" class="form-control" required>
+                        <option value="">Tipo de Projeto...</option>
+                        <option value="Arquitetônico">Projeto Arquitetônico</option>
+                        <option value="Interiores">Projeto de Interiores</option>
+                        <option value="Obra">Gestão de Obra Completa</option>
+                    </select>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="social-links">
+            <a href="http://www.instagram.com/juanbortoletto.arq" target="_blank">Instagram</a>
+            <span>•</span>
+            <a href="https://share.google/wQA0oCfrNzJxFjOJZ" target="_blank">Google</a>
+        </div>
+        <p style="font-size: 0.85rem; color: #A0B0C0;">© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
+        <p style="font-size: 0.80rem; color: #777; margin-top: 5px;">(11) 91275-6962</p>
+    </footer>
+
+</body>
+</html>
