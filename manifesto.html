@@ -46,104 +46,205 @@
         .nav-links a { margin-left: 35px; text-decoration: none; color: var(--charcoal); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; font-weight: 400; }
         .nav-links a:hover { color: var(--gold-accent); }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
 
-        /* Estilo do Manifesto */
-        .page-header { text-align: center; margin-bottom: 60px; }
-        .page-header span { color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 10px; }
-        .page-header h1 { font-size: 3rem; line-height: 1.2; }
+        /* Bloco 1: Foto e Introdução */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--light-gray);
+        }
 
-        .intro-text { font-size: 1.2rem; text-align: center; color: #555; margin-bottom: 60px; font-style: italic; }
+        .author-img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border: 1px solid var(--light-gray);
+            padding: 10px;
+            background: var(--off-white);
+        }
 
-        .principle-box { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid var(--light-gray); }
-        .principle-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold-accent); display: block; margin-bottom: 5px; }
-        .principle-box h2 { font-size: 1.8rem; margin-bottom: 15px; }
-        .principle-box p { text-align: justify; font-size: 1.05rem; color: #444; }
+        .intro-text span {
+            color: var(--gold-accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .intro-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Bloco 2: Os Princípios */
+        .manifesto-section { max-width: 800px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 60px; }
+
+        .principle-item {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--off-white);
+        }
+
+        .principle-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .principle-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold-accent);
+            font-weight: bold;
+        }
+
+        .principle-item h2 { font-size: 1.6rem; }
+        .principle-item p { text-align: justify; font-size: 1.05rem; color: #444; }
 
         /* CTA Final */
-        .manifesto-cta { text-align: center; background-color: var(--off-white); padding: 60px 20px; margin-top: 60px; border: 1px solid var(--light-gray); }
-        .btn { display: inline-block; background-color: var(--navy-blue); color: var(--pure-white); padding: 16px 32px; text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; border: 1px solid var(--navy-blue); margin-top: 20px; }
+        .manifesto-cta {
+            text-align: center;
+            background-color: var(--off-white);
+            padding: 60px 30px;
+            margin-top: 60px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--navy-blue);
+            color: var(--pure-white);
+            padding: 16px 32px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid var(--navy-blue);
+            margin-top: 20px;
+        }
+
         .btn:hover { background-color: var(--pure-white); color: var(--navy-blue); }
 
-        /* Rodapé */
-        footer { background-color: var(--navy-blue); padding: 50px 20px 20px; color: #E0E0E0; text-align: center; margin-top: 80px; }
+        /* Rodapé Compacto */
+        footer {
+            background-color: var(--navy-blue);
+            padding: 40px 20px 20px;
+            color: #E0E0E0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
         footer p { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
 
+        /* Mobile */
         @media (max-width: 900px) {
             .nav-links { display: none; }
             header { justify-content: center; }
-            .page-header h1 { font-size: 2.2rem; }
+            .intro-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .author-img { height: 380px; }
+            .intro-text h1 { font-size: 2rem; }
+            .principle-header { justify-content: center; text-align: center; flex-direction: column; gap: 5px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header com a nova ordem das abas -->
     <header>
         <a href="index.html" class="logo">Juan Bortoletto</a>
         <nav class="nav-links">
             <a href="index.html#sobre">Sobre</a>
-            <a href="manifesto.html" style="color: var(--gold-accent);">O Que Acredito</a>
             <a href="index.html#portfolio">Portfólio</a>
             <a href="index.html#servicos">Especialidades</a>
+            <a href="manifesto.html" style="color: var(--gold-accent);">O Que Acredito</a>
             <a href="artigos.html">Artigos</a>
             <a href="index.html#orcamento">Contato</a>
         </nav>
     </header>
 
-    <!-- Conteúdo do Manifesto -->
     <main class="container">
-        <div class="page-header">
-            <span>Valores & Princípios</span>
-            <h1 class="serif">O Que Acredito na Arquitetura</h1>
-        </div>
+        
+        <!-- Bloco 1: Foto (autor.jpg) e Apresentação -->
+        <section class="intro-grid">
+            <img src="autor.jpg" alt="Arquiteto Juan Bortoletto" class="author-img">
+            <div class="intro-text">
+                <span>Manifesto Autoral</span>
+                <h1 class="serif">A arquitetura existe para servir às pessoas, não ao ego do arquiteto.</h1>
+                <p>Criar um lar é um ato de escuta e responsabilidade. Meu trabalho é pautado pela busca de espaços autênticos, onde a identidade da sua família seja a verdadeira protagonista, aliando sensibilidade estética e respeito absoluto ao seu investimento.</p>
+            </div>
+        </section>
 
-        <p class="intro-text">"Projetar não é impor uma assinatura visual, mas escutar, respeitar histórias e criar refúgios autênticos para a vida real."</p>
+        <!-- Bloco 2: Os Princípios -->
+        <section class="manifesto-section">
+            <h2 class="serif section-title">Nossos Princípios Inegociáveis</h2>
 
-        <!-- Princípio 1 -->
-        <article class="principle-box">
-            <span class="principle-number">01</span>
-            <h2 class="serif">Arquitetura Humanizada</h2>
-            <p>Acredito que o verdadeiro foco da arquitetura não é o arquiteto, mas as pessoas que vão habitar e vivenciar o espaço. Cada decisão de projeto deve servir ao bem-estar, ao conforto e à rotina da sua família — e não ao ego do profissional ou ao engajamento de redes sociais.</p>
-        </article>
+            <article class="principle-item">
+                <div class="principle-header">
+                    <span class="principle-number">01</span>
+                    <h2 class="serif">Arquitetura Humanizada</h2>
+                </div>
+                <p>Acredito que o verdadeiro foco do projeto não é a assinatura do profissional, mas a experiência de quem habita o espaço. Cada decisão serve ao seu bem-estar, ao conforto térmico e luminoso e à funcionalidade da sua rotina diária.</p>
+            </article>
 
-        <!-- Princípio 2 -->
-        <article class="principle-box">
-            <span class="principle-number">02</span>
-            <h2 class="serif">A Identidade do Lar</h2>
-            <p>Recuso a padronização e as tendências passageiras que transformam lares em cenários frios e genéricos. A identidade da sua família deve ser o elemento predominante em cada ambiente. Sua casa deve contar a sua história, refletir a sua visão de mundo e acolher as suas memórias.</p>
-        </article>
+            <article class="principle-item">
+                <div class="principle-header">
+                    <span class="principle-number">02</span>
+                    <h2 class="serif">A Identidade da Família como Protagonista</h2>
+                </div>
+                <p>Recuso a padronização e as tendências passageiras que transformam casas em cenários frios. A sua história, a sua visão de mundo e a sua memória afetiva devem transparecer em cada ambiente, criando um lar verdadeiramente único.</p>
+            </article>
 
-        <!-- Princípio 3 -->
-        <article class="principle-box">
-            <span class="principle-number">03</span>
-            <h2 class="serif">Design Inteligente e Qualidade de Vida</h2>
-            <p>Um bom projeto não é o mais caro, mas aquele que traz real qualidade de vida às pessoas através do uso consciente dos recursos. A verdadeira sofisticação reside nas soluções funcionais, no conforto térmico e luminoso, e no respeito ao seu planejamento financeiro.</p>
-        </article>
+            <article class="principle-item">
+                <div class="principle-header">
+                    <span class="principle-number">03</span>
+                    <h2 class="serif">Design Inteligente e Qualidade de Vida</h2>
+                </div>
+                <p>Um bom projeto não é o mais caro, mas o mais consciente. A verdadeira sofisticação reside no uso inteligente dos recursos, nas soluções funcionais e no respeito ao seu planejamento financeiro para entregar máxima qualidade de vida.</p>
+            </article>
 
-        <!-- Princípio 4 -->
-        <article class="principle-box">
-            <span class="principle-number">04</span>
-            <h2 class="serif">Respeito à Memória e à Cultura</h2>
-            <p>Valorizo o passado, a cultura e a identidade local. Cada terreno possui uma história e cada região possui um clima e uma paisagem que devem ser respeitados. Integrar a arquitetura ao seu território e honrar a memória afetiva de quem contrata é o que garante valor duradouro ao projeto.</p>
-        </article>
+            <article class="principle-item">
+                <div class="principle-header">
+                    <span class="principle-number">04</span>
+                    <h2 class="serif">Respeito à Memória, Cultura e Território</h2>
+                </div>
+                <p>Valorizo o passado e a identidade local. Cada terreno possui uma história, uma orientação solar e uma paisagem própria. Integrar a arquitetura com sensibilidade ao seu entorno é o que garante valor e atemporalidade ao projeto.</p>
+            </article>
 
-        <!-- Princípio 5 -->
-        <article class="principle-box">
-            <span class="principle-number">05</span>
-            <h2 class="serif">Transparência e Responsabilidade na Execução</h2>
-            <p>O compromisso com os seus valores deve transparecer na prática. Uma boa concepção arquitetônica só se realiza quando acompanhada de uma gestão de obra séria, com orçamento blindado e respeito absoluto ao seu patrimônio. Transparência não é um diferencial, é uma obrigação.</p>
-        </article>
+            <article class="principle-item">
+                <div class="principle-header">
+                    <span class="principle-number">05</span>
+                    <h2 class="serif">Transparência e Responsabilidade na Execução</h2>
+                </div>
+                <p>Princípios de nada servem sem compromisso com a entrega. Uma arquitetura autoral só é plena quando acompanhada por uma gestão de obras séria, pautada pela transparência, orçamento blindado e respeito ao seu patrimônio.</p>
+            </article>
+        </section>
 
-        <!-- Chamada para Ação -->
-        <div class="manifesto-cta">
+        <!-- Bloco 3: Chamada para Ação (CTA) -->
+        <section class="manifesto-cta">
             <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 10px;">Se esses princípios ressoam com você, vamos conversar.</h3>
-            <p style="color: #666;">Será um prazer entender o seu momento e planejar o seu próximo lar.</p>
-            <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Li%20o%20seu%20manifesto%20no%20site%20e%20me%20identifiquei%20com%20seus%20valores.%20Gostaria%20de%20conversar." target="_blank" class="btn">Iniciar Conversa no WhatsApp</a>
-        </div>
+            <p style="color: #666;">Será um prazer entender o seu projeto e planejar o seu próximo lar com responsabilidade.</p>
+            <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Acessei%20o%20seu%20manifesto%20no%20site%20e%20me%20identifiquei%20com%20os%20seus%20valores.%20Gostaria%20de%20conversar." target="_blank" class="btn">Falar no WhatsApp</a>
+        </section>
+
     </main>
 
-    <!-- Rodapé Minimalista -->
     <footer>
         <p>© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
     </footer>
