@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manifesto e princípios da arquitetura por Juan Bortoletto. Arquitetura humanizada, identidade do lar e respeito ao território.">
+    <title>O Que Acredito | Juan Bortoletto Arquitetura</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+        :root {
+            --navy-blue: #1A2A3A;
+            --off-white: #F7F6F2;
+            --pure-white: #FFFFFF;
+            --charcoal: #333333;
+            --gold-accent: #C9B291;
+            --light-gray: #E8E5DF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: var(--charcoal);
+            background-color: var(--pure-white);
+            line-height: 1.8;
+            padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .serif, .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            color: var(--navy-blue);
+        }
+
+        /* Header */
+        header {
+            position: fixed; top: 0; width: 100%; background-color: var(--pure-white);
+            border-bottom: 1px solid var(--light-gray); z-index: 1000; display: flex;
+            justify-content: space-between; align-items: center; padding: 20px 40px;
+        }
+
+        .logo { font-size: 1.4rem; text-decoration: none; font-weight: 500; letter-spacing: 1px; }
+        .nav-links a { margin-left: 35px; text-decoration: none; color: var(--charcoal); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; font-weight: 400; }
+        .nav-links a:hover { color: var(--gold-accent); }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+
+        /* Estilo do Manifesto */
+        .page-header { text-align: center; margin-bottom: 60px; }
+        .page-header span { color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 10px; }
+        .page-header h1 { font-size: 3rem; line-height: 1.2; }
+
+        .intro-text { font-size: 1.2rem; text-align: center; color: #555; margin-bottom: 60px; font-style: italic; }
+
+        .principle-box { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid var(--light-gray); }
+        .principle-number { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold-accent); display: block; margin-bottom: 5px; }
+        .principle-box h2 { font-size: 1.8rem; margin-bottom: 15px; }
+        .principle-box p { text-align: justify; font-size: 1.05rem; color: #444; }
+
+        /* CTA Final */
+        .manifesto-cta { text-align: center; background-color: var(--off-white); padding: 60px 20px; margin-top: 60px; border: 1px solid var(--light-gray); }
+        .btn { display: inline-block; background-color: var(--navy-blue); color: var(--pure-white); padding: 16px 32px; text-decoration: none; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; border: 1px solid var(--navy-blue); margin-top: 20px; }
+        .btn:hover { background-color: var(--pure-white); color: var(--navy-blue); }
+
+        /* Rodapé */
+        footer { background-color: var(--navy-blue); padding: 50px 20px 20px; color: #E0E0E0; text-align: center; margin-top: 80px; }
+        footer p { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            header { justify-content: center; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">Juan Bortoletto</a>
+        <nav class="nav-links">
+            <a href="index.html#sobre">Sobre</a>
+            <a href="manifesto.html" style="color: var(--gold-accent);">O Que Acredito</a>
+            <a href="index.html#portfolio">Portfólio</a>
+            <a href="index.html#servicos">Especialidades</a>
+            <a href="artigos.html">Artigos</a>
+            <a href="index.html#orcamento">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo do Manifesto -->
+    <main class="container">
+        <div class="page-header">
+            <span>Valores & Princípios</span>
+            <h1 class="serif">O Que Acredito na Arquitetura</h1>
+        </div>
+
+        <p class="intro-text">"Projetar não é impor uma assinatura visual, mas escutar, respeitar histórias e criar refúgios autênticos para a vida real."</p>
+
+        <!-- Princípio 1 -->
+        <article class="principle-box">
+            <span class="principle-number">01</span>
+            <h2 class="serif">Arquitetura Humanizada</h2>
+            <p>Acredito que o verdadeiro foco da arquitetura não é o arquiteto, mas as pessoas que vão habitar e vivenciar o espaço. Cada decisão de projeto deve servir ao bem-estar, ao conforto e à rotina da sua família — e não ao ego do profissional ou ao engajamento de redes sociais.</p>
+        </article>
+
+        <!-- Princípio 2 -->
+        <article class="principle-box">
+            <span class="principle-number">02</span>
+            <h2 class="serif">A Identidade do Lar</h2>
+            <p>Recuso a padronização e as tendências passageiras que transformam lares em cenários frios e genéricos. A identidade da sua família deve ser o elemento predominante em cada ambiente. Sua casa deve contar a sua história, refletir a sua visão de mundo e acolher as suas memórias.</p>
+        </article>
+
+        <!-- Princípio 3 -->
+        <article class="principle-box">
+            <span class="principle-number">03</span>
+            <h2 class="serif">Design Inteligente e Qualidade de Vida</h2>
+            <p>Um bom projeto não é o mais caro, mas aquele que traz real qualidade de vida às pessoas através do uso consciente dos recursos. A verdadeira sofisticação reside nas soluções funcionais, no conforto térmico e luminoso, e no respeito ao seu planejamento financeiro.</p>
+        </article>
+
+        <!-- Princípio 4 -->
+        <article class="principle-box">
+            <span class="principle-number">04</span>
+            <h2 class="serif">Respeito à Memória e à Cultura</h2>
+            <p>Valorizo o passado, a cultura e a identidade local. Cada terreno possui uma história e cada região possui um clima e uma paisagem que devem ser respeitados. Integrar a arquitetura ao seu território e honrar a memória afetiva de quem contrata é o que garante valor duradouro ao projeto.</p>
+        </article>
+
+        <!-- Princípio 5 -->
+        <article class="principle-box">
+            <span class="principle-number">05</span>
+            <h2 class="serif">Transparência e Responsabilidade na Execução</h2>
+            <p>O compromisso com os seus valores deve transparecer na prática. Uma boa concepção arquitetônica só se realiza quando acompanhada de uma gestão de obra séria, com orçamento blindado e respeito absoluto ao seu patrimônio. Transparência não é um diferencial, é uma obrigação.</p>
+        </article>
+
+        <!-- Chamada para Ação -->
+        <div class="manifesto-cta">
+            <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 10px;">Se esses princípios ressoam com você, vamos conversar.</h3>
+            <p style="color: #666;">Será um prazer entender o seu momento e planejar o seu próximo lar.</p>
+            <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Li%20o%20seu%20manifesto%20no%20site%20e%20me%20identifiquei%20com%20seus%20valores.%20Gostaria%20de%20conversar." target="_blank" class="btn">Iniciar Conversa no WhatsApp</a>
+        </div>
+    </main>
+
+    <!-- Rodapé Minimalista -->
+    <footer>
+        <p>© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
