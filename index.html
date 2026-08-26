@@ -44,7 +44,7 @@
         
         .text-justify { text-align: justify; }
 
-        /* Menu */
+        /* Menu Desktop */
         header {
             position: fixed; top: 0; width: 100%; background-color: var(--pure-white);
             border-bottom: 1px solid var(--light-gray); z-index: 1000; display: flex;
@@ -54,6 +54,17 @@
         .logo { font-size: 1.4rem; text-decoration: none; font-weight: 500; letter-spacing: 1px; }
         .nav-links a { margin-left: 35px; text-decoration: none; color: var(--charcoal); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; font-weight: 400; }
         .nav-links a:hover { color: var(--gold-accent); }
+
+        /* Botão Hambúrguer Mobile (Oculto no Desktop) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            color: var(--navy-blue);
+            cursor: pointer;
+            padding: 5px;
+        }
 
         /* Botão Padrão */
         .btn {
@@ -136,13 +147,40 @@
         .footer-socials a:hover { opacity: 1; }
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
 
-        /* OTIMIZAÇÃO PARA CELULAR (MOBILE) */
+        /* ========================================= */
+        /* OTIMIZAÇÃO PARA CELULAR (MOBILE)          */
+        /* ========================================= */
         @media (max-width: 900px) {
             .about-grid, .services-grid, .differentials-grid, .contact-container { grid-template-columns: 1fr; gap: 40px; }
-            .nav-links { display: none; }
             
-            header { justify-content: center; padding: 15px 20px; }
+            /* Ajustes do Cabeçalho e Menu Hambúrguer */
+            header { padding: 15px 20px; }
             .logo { font-size: 1.2rem; }
+            
+            .menu-toggle { display: block; } /* Exibe o botão ☰ no celular */
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--pure-white);
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid var(--light-gray);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            }
+
+            .nav-links.active {
+                display: flex; /* Exibe o menu quando ativo */
+            }
+
+            .nav-links a {
+                margin: 12px 0;
+                text-align: center;
+                font-size: 0.95rem;
+            }
             
             .hero h1 { font-size: 2.1rem; margin-top: 0; line-height: 1.2; }
             .hero p { font-size: 0.95rem; margin-bottom: 35px; padding: 0 15px; }
@@ -160,7 +198,8 @@
 
     <header>
         <a href="index.html" class="logo">Juan Bortoletto</a>
-        <nav class="nav-links">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">☰</button>
+        <nav class="nav-links" id="navLinks">
             <a href="index.html#sobre">Sobre</a>
             <a href="index.html#portfolio">Portfólio</a>
             <a href="index.html#servicos">Especialidades</a>
@@ -294,14 +333,12 @@
     <!-- Rodapé Compacto -->
     <footer>
         <div class="container footer-container">
-            <!-- Coluna 1: Marca e Registro -->
             <div class="footer-col">
                 <a href="#" class="logo" style="color: var(--pure-white); font-size: 1.6rem; display: block; margin-bottom: 15px; font-family: 'Playfair Display', serif;">Juan Bortoletto</a>
                 <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; color: #A0B0C0; font-weight: 300;">Arquitetura autoral e gestão com previsibilidade. Projetos residenciais de alto padrão.</p>
                 <p style="font-size: 0.85rem; color: var(--gold-accent); font-weight: bold; letter-spacing: 1px;">CAU: A00000-0</p>
             </div>
 
-            <!-- Coluna 2: Navegação -->
             <div class="footer-col">
                 <h4 class="serif">Navegação</h4>
                 <ul>
@@ -313,7 +350,6 @@
                 </ul>
             </div>
 
-            <!-- Coluna 3: Contato -->
             <div class="footer-col">
                 <h4 class="serif">Contato</h4>
                 <ul>
@@ -323,19 +359,15 @@
                 </ul>
             </div>
 
-            <!-- Coluna 4: Redes Sociais -->
             <div class="footer-col">
                 <h4 class="serif">Acompanhe</h4>
                 <div class="footer-socials">
-                    <!-- Instagram -->
                     <a href="http://www.instagram.com/juanbortoletto.arq" target="_blank" title="Instagram">
                         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                     </a>
-                    <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/juan-bortoletto-3b50411a6/" target="_blank" title="LinkedIn">
                         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
-                    <!-- Google Meu Negócio -->
                     <a href="https://share.google/wQA0oCfrNzJxFjOJZ" target="_blank" title="Google Meu Negócio">
                         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
                     </a>
@@ -347,6 +379,25 @@
             <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1.5px;">© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Script leve para controlar o Menu Hambúrguer -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Fecha o menu ao clicar em qualquer link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.textContent = '☰';
+            });
+        });
+    </script>
 
 </body>
 </html>
