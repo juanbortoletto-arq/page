@@ -7,12 +7,14 @@
     <meta name="description" content="Escritório de arquitetura em Ribeirão Pires e Grande ABC. Projetos residenciais, interiores e gestão de obras com orçamento controlado.">
     <title>Juan Bortoletto Arquitetura | Projetos Residenciais e Gestão de Obras</title>
     <style>
+        /* Importação das 3 fontes rigorosamente definidas na sua Identidade Visual */
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
         :root {
-            --navy-blue: #0B192C; 
-            --gold-accent: #C8A97E; 
-            --off-white: #F4F4F4; 
+            /* Nova Paleta Extraída da Apresentação Oficial */
+            --navy-blue: #0B192C; /* Azul Profundo / Noturno */
+            --gold-accent: #C8A97E; /* Dourado Metálico Clássico */
+            --off-white: #F4F4F4; /* Fundo cinza super claro */
             --pure-white: #FFFFFF;
             --charcoal: #333333;
             --light-gray: #E0E0E0;
@@ -28,18 +30,29 @@
             line-height: 1.7; 
             padding-top: 80px; 
             -webkit-font-smoothing: antialiased; 
-            overflow-x: hidden;
         }
 
-        h1, h2 { font-family: 'Lora', serif; font-weight: 500; color: var(--navy-blue); }
-        h3, .subtitle, .logo, .serif { font-family: 'Playfair Display', serif; font-weight: 400; }
+        /* Hierarquia Tipográfica Rigorosa */
+        h1, h2 {
+            font-family: 'Lora', serif; /* Títulos em LORA */
+            font-weight: 500;
+            color: var(--navy-blue);
+        }
+
+        h3, .subtitle, .logo, .serif {
+            font-family: 'Playfair Display', serif; /* Subtítulos e destaques em PLAYFAIR */
+            font-weight: 400;
+        }
+
         h1 { font-size: 3.2rem; line-height: 1.2; letter-spacing: -0.5px; }
         h2 { font-size: 2.2rem; margin-bottom: 20px; }
         .subtitle { font-size: 1.15rem; color: #555; margin-bottom: 20px; }
+        
         .text-justify { text-align: justify; }
 
+        /* Menu */
         header {
-            position: fixed; top: 0; left: 0; width: 100%; background-color: var(--pure-white);
+            position: fixed; top: 0; width: 100%; background-color: var(--pure-white);
             border-bottom: 1px solid var(--light-gray); z-index: 1000; display: flex;
             justify-content: space-between; align-items: center; padding: 20px 40px;
         }
@@ -53,10 +66,10 @@
             margin-left: 20px; display: inline-flex; align-items: center; justify-content: center; transition: transform 0.3s ease;
         }
         .header-instagram:hover { transform: scale(1.15); }
-        .header-instagram svg { fill: var(--gold-accent); transition: fill 0.3s; }
-        .header-instagram:hover svg { fill: var(--navy-blue); }
 
-        .menu-toggle { display: none; background: none; border: none; font-size: 1.6rem; color: var(--navy-blue); cursor: pointer; padding: 5px; }
+        .menu-toggle {
+            display: none; background: none; border: none; font-size: 1.6rem; color: var(--navy-blue); cursor: pointer; padding: 5px;
+        }
 
         .btn {
             display: inline-block; background-color: var(--navy-blue); color: var(--pure-white);
@@ -64,45 +77,48 @@
             text-transform: uppercase; transition: all 0.3s ease; border: 1px solid var(--navy-blue);
             cursor: pointer; font-weight: 400; font-family: 'Lato', sans-serif;
         }
-        .btn:hover { background-color: var(--pure-white); color: var(--navy-blue); border-color: var(--pure-white); }
+        .btn:hover { background-color: var(--pure-white); color: var(--navy-blue); border-color: var(--navy-blue); }
 
-        /* TOPO (HERO) COM DEGRADÊ E IMAGENS */
+        /* Capa Hero */
         .hero-lara-style {
-            position: relative;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
             background-color: var(--off-white);
-        }
-
-        .hero-bg-slider {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-            background-color: var(--off-white);
-        }
-        
-        .hero-slide {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-size: cover; background-position: center;
-            opacity: 0; transition: opacity 1.5s ease-in-out;
-        }
-        .hero-slide.active { opacity: 1; }
-
-        .hero-gradient {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;
-            background: linear-gradient(90deg, var(--off-white) 0%, var(--off-white) 45%, rgba(244, 244, 244, 0.6) 70%, rgba(244, 244, 244, 0) 100%);
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--light-gray);
         }
 
         .hero-container {
-            position: relative; z-index: 3;
-            width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
         }
-        
-        .hero-text-content { max-width: 600px; }
 
-        .hero-badges { display: flex; flex-wrap: wrap; gap: 30px; margin: 30px 0; padding-top: 20px; border-top: 1px solid #CCC; }
-        .badge-item strong { display: block; font-family: 'Lora', serif; font-size: 1.4rem; color: var(--navy-blue); }
-        .badge-item span { font-size: 0.85rem; color: #555; text-transform: uppercase; letter-spacing: 1px; font-family: 'Lato', sans-serif; }
+        .hero-badges {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
 
+        .badge-item strong {
+            display: block;
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            color: var(--navy-blue);
+        }
+
+        .badge-item span {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* WhatsApp Flutuante */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
             background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
@@ -115,14 +131,17 @@
         .container { max-width: 1200px; margin: 0 auto; }
         .text-center { text-align: center; }
 
+        /* Blocos da Identidade */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
         .about-image { width: 100%; max-width: 400px; height: auto; object-fit: cover; border: 1px solid var(--light-gray); padding: 10px; margin: 0 auto; display: block; }
         
+        /* Portfólio (8 Imagens) */
         .portfolio { background-color: var(--pure-white); }
         .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 40px 0; }
         .portfolio-item { width: 100%; height: 260px; object-fit: cover; transition: transform 0.4s ease; cursor: pointer; border: 1px solid var(--light-gray); }
         .portfolio-item:hover { transform: scale(1.03); }
 
+        /* Serviços */
         .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
         .service-box { background: var(--off-white); padding: 50px 30px; border-top: 3px solid var(--navy-blue); border-left: 1px solid var(--light-gray); border-right: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); }
         .service-box h2 { font-size: 1.4rem; margin-bottom: 20px; border-bottom: 1px solid var(--light-gray); padding-bottom: 20px; }
@@ -130,67 +149,59 @@
         .service-list li { margin-bottom: 15px; padding-left: 24px; position: relative; font-size: 0.95rem; }
         .service-list li::before { content: '—'; color: var(--gold-accent); position: absolute; left: 0; font-weight: bold; }
 
+        /* Fundo escuro azul para diferenciais - Remetendo ao PDF */
         .differentials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 80px; }
         .diff-box { background-color: var(--navy-blue); color: var(--pure-white); padding: 50px 40px; text-align: left; border-bottom: 3px solid var(--gold-accent); }
         .diff-box h3 { color: var(--gold-accent); font-size: 1.5rem; margin-bottom: 20px; line-height: 1.3; }
         .diff-box p { font-size: 1rem; color: #E0E0E0; font-weight: 300; }
 
+        /* FAQ */
         .faq-section { background-color: var(--off-white); padding: 100px 20px; border-top: 1px solid var(--light-gray); }
         .faq-container { max-width: 800px; margin: 40px auto 0; }
         .faq-item { background: var(--pure-white); border: 1px solid var(--light-gray); margin-bottom: 15px; padding: 20px 25px; transition: all 0.3s; }
-        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy-blue); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .faq-question { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy-blue); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 500; }
         .faq-answer { display: none; margin-top: 15px; font-size: 0.95rem; color: #555; border-top: 1px solid var(--off-white); padding-top: 15px; text-align: justify; }
         .faq-item.active .faq-answer { display: block; }
-        .faq-toggle { font-size: 1.4rem; color: var(--navy-blue); font-weight: 700; }
+        .faq-toggle { font-size: 1.4rem; color: var(--gold-accent); }
 
-        /* FORMULÁRIO EM AZUL ESCURO */
-        .contact-section { background-color: var(--navy-blue); color: var(--pure-white); padding: 100px 20px; }
-        .form-card { background: var(--navy-blue); padding: 50px 40px; max-width: 850px; margin: 0 auto; border: 1px solid rgba(255, 255, 255, 0.15); }
+        /* Formulário Multi-Step */
+        .contact-section { background-color: var(--pure-white); padding: 100px 20px; }
+        .form-card { background: var(--off-white); padding: 50px 40px; max-width: 850px; margin: 0 auto; border: 1px solid var(--light-gray); }
         
         .step-panel { display: none; }
         .step-panel.active { display: block; }
 
-        .form-title { margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; color: var(--pure-white) !important; }
-        .form-subtitle { color: #A0B0C0; margin-bottom: 30px; font-size: 1.05rem; }
+        .form-title { margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; }
+        .form-subtitle { color: #777; margin-bottom: 30px; font-size: 1.05rem; }
 
         .choice-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
         .choice-btn {
-            padding: 20px; border: 1px solid rgba(255, 255, 255, 0.4); background: transparent; color: var(--pure-white);
+            padding: 20px; border: 1px solid var(--navy-blue); background: transparent; color: var(--navy-blue);
             font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
             cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between;
         }
-        .choice-btn.primary { background: var(--gold-accent); color: var(--navy-blue); border-color: var(--gold-accent); }
-        .choice-btn:hover { background: rgba(255, 255, 255, 0.1); }
-        .choice-btn.primary:hover { background: var(--pure-white); color: var(--navy-blue); border-color: var(--pure-white); }
+        .choice-btn.primary { background: var(--navy-blue); color: var(--pure-white); }
+        .choice-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
         .input-group { margin-bottom: 25px; text-align: left; }
-        .input-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--gold-accent); margin-bottom: 8px; }
-        
+        .input-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #555; margin-bottom: 8px; }
         .line-input {
-            width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); background: transparent;
-            font-family: 'Lato', sans-serif; font-size: 1rem; color: var(--pure-white); outline: none; transition: border-color 0.3s;
+            width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #CCC; background: transparent;
+            font-family: 'Lato', sans-serif; font-size: 1rem; color: var(--charcoal); outline: none; transition: border-color 0.3s;
         }
-        .line-input::placeholder { color: rgba(255, 255, 255, 0.4); }
-        .line-input:focus { border-bottom-color: var(--gold-accent); }
+        .line-input:focus { border-bottom-color: var(--navy-blue); }
 
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
         .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0; }
         .city-card {
-            padding: 18px 12px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center;
-            font-size: 0.9rem; color: var(--pure-white); cursor: pointer; transition: all 0.3s;
+            padding: 18px 12px; background: var(--pure-white); border: 1px solid var(--light-gray); text-align: center;
+            font-size: 0.9rem; color: var(--charcoal); cursor: pointer; transition: all 0.3s;
         }
-        .city-card:hover, .city-card.selected { background: var(--gold-accent); color: var(--navy-blue); border-color: var(--gold-accent); }
+        .city-card:hover, .city-card.selected { background: var(--navy-blue); color: var(--pure-white); border-color: var(--navy-blue); }
 
-        .btn-form {
-            display: inline-block; background-color: var(--gold-accent); color: var(--navy-blue);
-            padding: 16px 32px; text-decoration: none; font-size: 0.85rem; letter-spacing: 2px;
-            text-transform: uppercase; transition: all 0.3s ease; border: 1px solid var(--gold-accent);
-            cursor: pointer; font-weight: 700; font-family: 'Lato', sans-serif; width: 100%; margin-top: 20px;
-        }
-        .btn-form:hover { background-color: var(--pure-white); color: var(--navy-blue); border-color: var(--pure-white); }
-
-        footer { background-color: var(--navy-blue); padding: 50px 20px 20px; color: #E0E0E0; border-top: 1px solid rgba(255,255,255,0.05); }
+        /* Rodapé com Azul Profundo e Dourado */
+        footer { background-color: var(--navy-blue); padding: 50px 20px 20px; color: #E0E0E0; border-top: 3px solid var(--gold-accent); }
         .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; text-align: left; }
         .footer-col h4 { color: var(--pure-white); font-size: 1.2rem; margin-bottom: 15px; font-weight: 400; }
         .footer-col ul { list-style: none; padding: 0; }
@@ -199,17 +210,18 @@
         .footer-col ul li a:hover { color: var(--gold-accent); }
         
         .footer-socials { display: flex; gap: 15px; align-items: center; }
-        .social-link svg { fill: var(--gold-accent); transition: fill 0.3s ease; }
+
+        .social-link { transition: transform 0.3s; display: inline-flex; }
         .social-link:hover { transform: scale(1.15); }
-        .social-link:hover svg { fill: var(--pure-white); }
+        .social-instagram svg { fill: url(#instagram-gradient); }
+        .social-linkedin svg { fill: #0A66C2; }
+        .social-google svg { fill: #4285F4; }
+
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
 
+        /* Mobile */
         @media (max-width: 900px) {
-            .hero-gradient { background: linear-gradient(0deg, var(--off-white) 0%, var(--off-white) 55%, rgba(244, 244, 244, 0) 100%); }
-            .hero-lara-style { min-height: 100vh; align-items: flex-end; padding-bottom: 60px; }
-            .hero-text-content { max-width: 100%; margin-top: 100px; }
-
-            .about-grid, .services-grid, .differentials-grid, .form-row, .choice-buttons { grid-template-columns: 1fr; gap: 30px; }
+            .hero-container, .about-grid, .services-grid, .differentials-grid, .form-row, .choice-buttons { grid-template-columns: 1fr; gap: 30px; }
             .cards-grid { grid-template-columns: 1fr 1fr; }
             .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
             
@@ -234,6 +246,18 @@
 </head>
 <body>
 
+    <!-- Cores Gradiente do Instagram -->
+    <svg width="0" height="0" style="position:absolute;">
+      <radialGradient id="instagram-gradient" r="150%" sm="30%" sy="107%">
+        <stop stop-color="#fdf497" offset="0%" />
+        <stop stop-color="#fdf497" offset="5%" />
+        <stop stop-color="#fd5949" offset="45%" />
+        <stop stop-color="#d6249f" offset="60%" />
+        <stop stop-color="#285AEB" offset="90%" />
+      </radialGradient>
+    </svg>
+
+    <!-- CABEÇALHO -->
     <header>
         <a href="index.html" class="logo">Juan Bortoletto</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">☰</button>
@@ -246,11 +270,338 @@
             <a href="index.html#orcamento">Contato</a>
             
             <a href="https://www.instagram.com/juanbortoletto_arq" target="_blank" class="header-instagram" title="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="url(#instagram-gradient)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
         </nav>
     </header>
 
     <a href="https://wa.me/5511912756962?text=Olá,%20Juan.%20Acessei%20o%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.32
+          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <!-- CAPA HERO -->
+    <section class="hero-lara-style">
+        <div class="hero-container">
+            <div>
+                <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Arquitetura & Gestão de Obra</span>
+                <h1>Transforme seu imóvel residencial em um lar pronto para viver.</h1>
+                <p class="subtitle">Recebeu as chaves ou está prestes a construir e reformar? Evite decisões apressadas e orçamentos estourados. Criamos projetos autorais que unem funcionalidade, controle financeiro e identidade.</p>
+                
+                <div class="hero-badges">
+                    <div class="badge-item">
+                        <strong>CAU A333566-6</strong>
+                        <span>Atuação Técnica</span>
+                    </div>
+                    <div class="badge-item">
+                        <strong>Projetos Autorais</strong>
+                        <span>Residenciais & Interiores</span>
+                    </div>
+                </div>
+
+                <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+            </div>
+            
+            <!-- Imagens de Fundo/Carrossel de Capa -->
+            <div style="position: relative; width: 100%; height: 500px; overflow: hidden; border: 1px solid var(--light-gray); box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="hero-slide active" style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('capa1.jpg') center/cover; opacity: 1; transition: opacity 1.5s;"></div>
+                <div class="hero-slide" style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('capa2.jpg') center/cover; opacity: 0; transition: opacity 1.5s;"></div>
+                <div class="hero-slide" style="position: absolute; top:0; left:0; width:100%; height:100%; background: url('capa3.jpg') center/cover; opacity: 0; transition: opacity 1.5s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAJETÓRIA E PROPÓSITO -->
+    <section id="sobre" class="section-padding">
+        <div class="container about-grid">
+            <img src="perfil.jpg" alt="Arquiteto Juan Bortoletto" class="about-image">
+            <div>
+                <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Trajetória e Propósito</span>
+                <h2>Honestidade Técnica e Essência em Cada Detalhe</h2>
+                <p class="text-justify" style="margin-bottom: 15px;">Formado em Arquitetura e Urbanismo, Juan Bortoletto construiu sua prática sobre pilares claros: a busca por espaços com alma e a convicção de que uma boa obra é sinônimo de previsibilidade e transparência.</p>
+                <p class="text-justify" style="margin-bottom: 15px;">Especializado em projetos residenciais de alto padrão e arquitetura de interiores, o escritório atua afastando a padronização e resgatando a essência da história de cada cliente. Acreditamos que o bom design não deve ser o mais caro, mas o que entrega real qualidade de vida.</p>
+                <p class="text-justify">Mais do que desenhar layouts, assumimos a responsabilidade ponta a ponta: alinhamos estética, estudo de viabilidade financeira (EVF) e acompanhamento técnico rigoroso no canteiro para afastar surpresas desagradáveis e entregar um lar pronto para a vida real.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS ENTREGUES -->
+    <section id="portfolio" class="section-padding portfolio">
+        <div class="container text-center">
+            <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Galeria Autoral</span>
+            <h2>Projetos Entregues</h2>
+            <p class="subtitle" style="max-width: 600px; margin: 0 auto;">Transformações que unem estética, funcionalidade e a verdadeira identidade dos nossos clientes.</p>
+            
+            <div class="portfolio-grid">
+                <img src="projeto1.jpg?v=3" alt="Projeto entregue 1" class="portfolio-item">
+                <img src="projeto2.jpg?v=3" alt="Projeto entregue 2" class="portfolio-item">
+                <img src="projeto3.jpg?v=3" alt="Projeto entregue 3" class="portfolio-item">
+                <img src="projeto4.jpg?v=3" alt="Projeto entregue 4" class="portfolio-item">
+                <img src="projeto5.jpg?v=3" alt="Projeto entregue 5" class="portfolio-item">
+                <img src="projeto6.jpg?v=3" alt="Projeto entregue 6" class="portfolio-item">
+                <img src="projeto7.jpg?v=3" alt="Projeto entregue 7" class="portfolio-item">
+                <img src="projeto8.jpg?v=3" alt="Projeto entregue 8" class="portfolio-item">
+            </div>
+
+            <a href="#orcamento" class="btn" style="margin-top: 20px;">Quero um orçamento para meu projeto</a>
+        </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="servicos" class="section-padding" style="background: var(--off-white);">
+        <div class="container">
+            <div class="text-center">
+                <h2>Especialidades</h2>
+            </div>
+            <div class="services-grid text-left">
+                <div class="service-box">
+                    <h2 style="font-size: 1.5rem;">Projeto Arquitetônico</h2>
+                    <ul class="service-list">
+                        <li>Estudo de viabilidade técnica</li>
+                        <li>Concepção volumétrica e fachada</li>
+                        <li>Aprovação legal (Prefeitura e Condomínio)</li>
+                        <li>Detalhamento executivo rigoroso</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <h2 style="font-size: 1.5rem;">Projeto de Interiores</h2>
+                    <ul class="service-list">
+                        <li>Diagnóstico e briefing personalizado</li>
+                        <li>Conceito estético e layout inteligente</li>
+                        <li>Apresentação em modelagem 3D</li>
+                        <li>Caderno de especificações técnicas</li>
+                    </ul>
+                </div>
+                <div class="service-box">
+                    <h2 style="font-size: 1.5rem;">Gestão de Obra</h2>
+                    <ul class="service-list">
+                        <li>Estudo de Viabilidade Financeira (EVF)</li>
+                        <li>Coordenação de equipes e fornecedores</li>
+                        <li>Fiscalização de cronograma e custos</li>
+                        <li>Inspeção técnica para entrega final</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="differentials-grid">
+                <div class="diff-box">
+                    <h3 class="serif">Rigor Técnico e Estético</h3>
+                    <p class="text-justify">Especializado em unir excelência estética ao planejamento de alto nível. Cada decisão é conduzida de forma estratégica para valorizar seu investimento e entregar um refúgio sofisticado e funcional.</p>
+                </div>
+                <div class="diff-box">
+                    <h3 class="serif">Orçamento Blindado</h3>
+                    <p class="text-justify">Através do Estudo de Viabilidade Financeira (EVF), garanto controle absoluto de custos e escopo antes de iniciar a execução, eliminando surpresas e imprevistos.</p>
+                </div>
+                <div class="diff-box">
+                    <h3 class="serif">Fim do Improviso</h3>
+                    <p class="text-justify">Sua obra conduzida com cronograma técnico. Assumo a coordenação direta do canteiro para garantir tranquilidade, transparência e fidelidade total ao projeto aprovado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (DÚVIDAS FREQUENTES) -->
+    <section class="faq-section">
+        <div class="container text-center">
+            <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Transparência do Processo</span>
+            <h2>Dúvidas Frequentes</h2>
+            <p class="subtitle" style="max-width: 650px; margin: 0 auto;">Esclarecemos os principais pontos sobre responsabilidades técnicas, processo de projeto e como garantimos a segurança da sua obra.</p>
+
+            <div class="faq-container text-left">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Posso começar o projeto antes de receber as chaves do imóvel?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim. O planejamento inicial e o estudo de layout podem começar com base nas plantas disponibilizadas pela construtora. Assim que você tiver acesso ao imóvel, realizamos a medição técnica minuciosa no local para validar o projeto executivo.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Vocês realizam a emissão de documentação técnica do CAU?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim. Emitimos o Registro de Responsabilidade Técnica (RRT) junto ao CAU para todos os projetos desenvolvidos pelo escritório, assegurando a conformidade legal exigida por prefeituras e condomínios.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Qual é a região de atendimento para gestão e acompanhamento de obra?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Atendemos presencialmente em Ribeirão Pires, cidades do Grande ABC (Santo André, São Bernardo, São Caetano, Mauá) e Grande São Paulo. Também desenvolvemos projetos de arquitetura e interiores de forma online para outras regiões.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Como funciona o controle financeiro e a cotação de fornecedores?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Utilizamos o Estudo de Viabilidade Financeira (EVF) para mapear os custos antes de iniciar a execução. Auxiliamos na cotação de orçamentos com fornecedores parceiros, buscando alinhar qualidade, prazos e o seu teto orçamentário.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO MULTI-STEP -->
+    <section id="orcamento" class="contact-section text-center">
+        <div class="container">
+            <span style="color: var(--gold-accent); letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; font-weight: 700;">Contato Direto</span>
+            
+            <div class="form-card" style="margin-top: 20px;">
+                <form id="multiStepForm" action="https://formspree.io/f/myegvgll" method="POST">
+                    
+                    <div class="step-panel active" id="step1">
+                        <h2 class="serif form-title" style="font-family: 'Lora', serif; font-size: 2.2rem; margin-bottom: 10px; color: var(--navy-blue);">Como podemos ajudar você?</h2>
+                        <p class="subtitle form-subtitle">Selecione uma opção para continuar.</p>
+
+                        <div class="choice-buttons">
+                            <button type="button" class="choice-btn primary" onclick="nextStep(2, 'Orçamento')">
+                                Quero solicitar um orçamento <span>→</span>
+                            </button>
+                            <button type="button" class="choice-btn" onclick="nextStep(2, 'Fornecedor')">
+                                Sou fornecedor <span>→</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="step-panel" id="step2">
+                        <input type="hidden" name="perfil-contato" id="perfilInput">
+                        <input type="hidden" name="cidade-imovel" id="cidadeInput">
+
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label class="input-label">Nome</label>
+                                <input type="text" name="nome" class="line-input" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Número</label>
+                                <input type="tel" name="whatsapp" class="line-input" placeholder="DDD + número" required>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Email</label>
+                            <input type="email" name="email" class="line-input" placeholder="seuemail@exemplo.com" required>
+                        </div>
+
+                        <h3 class="serif" style="font-size: 1.4rem; margin-top: 30px; text-align: left;">Em qual cidade está localizado o imóvel?</h3>
+                        
+                        <div class="cards-grid">
+                            <div class="city-card" onclick="selectCity(this, 'Ribeirão Pires')">Ribeirão Pires</div>
+                            <div class="city-card" onclick="selectCity(this, 'Mauá')">Mauá</div>
+                            <div class="city-card" onclick="selectCity(this, 'Santo André')">Santo André</div>
+                            <div class="city-card" onclick="selectCity(this, 'São Caetano do Sul')">São Caetano do Sul</div>
+                            <div class="city-card" onclick="selectCity(this, 'Outra cidade')">Outra cidade</div>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Avançar e Enviar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: var(--pure-white); font-size: 1.6rem; display: block; margin-bottom: 15px; font-family: 'Playfair Display', serif;">Juan Bortoletto</a>
+                <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; color: #A0B0C0; font-weight: 300;">Arquitetura autoral e gestão com previsibilidade. Projetos residenciais de alto padrão.</p>
+                <p style="font-size: 0.85rem; color: var(--gold-accent); font-weight: bold; letter-spacing: 1px; font-family: 'Lato', sans-serif;">CAU: A333566-6</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="serif">Navegação</h4>
+                <ul>
+                    <li><a href="#sobre">O Arquiteto</a></li>
+                    <li><a href="#portfolio">Projetos Entregues</a></li>
+                    <li><a href="#servicos">Especialidades e Valores</a></li>
+                    <li><a href="manifesto.html">O Que Acredito</a></li>
+                    <li><a href="artigos.html">Artigos e Reflexões</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="serif">Contato</h4>
+                <ul>
+                    <li><span style="color: var(--gold-accent);">WhatsApp:</span> (11) 91275-6962</li>
+                    <li><span style="color: var(--gold-accent);">Local:</span> Ribeirão Pires - SP</li>
+                    <li><span style="color: var(--gold-accent);">Atuação:</span> Grande ABC e São Paulo</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="serif">Acompanhe</h4>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/juanbortoletto_arq" target="_blank" class="social-link social-instagram" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/juan-bortoletto-3b50411a6/" target="_blank" class="social-link social-linkedin" title="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://share.google/wQA0oCfrNzJxFjOJZ" target="_blank" class="social-link social-google" title="Google Meu Negócio">
+                        <svg width="24" height="24" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p style="font-size: 0.8rem; color: #777; text-transform: uppercase; letter-spacing: 1.5px;">© 2026 Juan Bortoletto Arquitetura. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Carrossel de Capa Hero
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].style.opacity = 0;
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = 1;
+        }, 4500);
+
+        // Toggle do FAQ
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const toggleIcon = element.querySelector('.faq-toggle');
+            faqItem.classList.toggle('active');
+            toggleIcon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+
+        // Formulário Multi-Step
+        function nextStep(stepNumber, perfilChoice) {
+            if (perfilChoice) document.getElementById('perfilInput').value = perfilChoice;
+            document.querySelectorAll('.step-panel').forEach(panel => panel.classList.remove('active'));
+            document.getElementById('step' + stepNumber).classList.add('active');
+        }
+
+        function selectCity(element, cityName) {
+            document.querySelectorAll('.city-card').forEach(card => card.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('cidadeInput').value = cityName;
+        }
+    </script>
+
+</body>
+</html>
